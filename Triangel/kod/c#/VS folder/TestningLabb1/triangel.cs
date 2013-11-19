@@ -5,10 +5,10 @@ using System.Collections.Generic;
 public struct Point { 
   public int x, y;
   
-  public Point(int a, int b) {
+    public Point(int a, int b) {
     x = a;
     y = b;
-  }
+    }
 }
 
 public class Triangle {

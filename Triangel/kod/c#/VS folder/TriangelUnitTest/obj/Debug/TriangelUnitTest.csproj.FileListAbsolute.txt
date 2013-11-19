@@ -1,0 +1,7 @@
+C:\Users\Lowe\Documents\GitHub\Uppgift-1\Triangel\kod\c#\VS folder\TriangelUnitTest\bin\Debug\TriangelUnitTest.dll
+C:\Users\Lowe\Documents\GitHub\Uppgift-1\Triangel\kod\c#\VS folder\TriangelUnitTest\bin\Debug\TriangelUnitTest.pdb
+C:\Users\Lowe\Documents\GitHub\Uppgift-1\Triangel\kod\c#\VS folder\TriangelUnitTest\obj\Debug\TriangelUnitTest.csprojResolveAssemblyReference.cache
+C:\Users\Lowe\Documents\GitHub\Uppgift-1\Triangel\kod\c#\VS folder\TriangelUnitTest\obj\Debug\TriangelUnitTest.dll
+C:\Users\Lowe\Documents\GitHub\Uppgift-1\Triangel\kod\c#\VS folder\TriangelUnitTest\obj\Debug\TriangelUnitTest.pdb
+C:\Users\Lowe\Documents\GitHub\Uppgift-1\Triangel\kod\c#\VS folder\TriangelUnitTest\bin\Debug\TestningLabb1.exe
+C:\Users\Lowe\Documents\GitHub\Uppgift-1\Triangel\kod\c#\VS folder\TriangelUnitTest\bin\Debug\TestningLabb1.pdb
