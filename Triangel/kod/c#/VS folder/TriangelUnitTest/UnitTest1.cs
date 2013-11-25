@@ -18,7 +18,7 @@ namespace TriangelUnitTest
                                               // dvs testet lyckas. 
                                               // alltså om Assert.IsTrue() har en metod(eller variabel)
                                               // i sina parametrar som är true så kastar metoden true
-                                              // 
+                                              
             
         }
         [TestMethod]
@@ -59,7 +59,7 @@ namespace TriangelUnitTest
 
         // Test för Triangle(Point a, Point b, Point c)
         [TestMethod]
-        public void PointKonstruktornABC ()
+        public void PointKonstruktornABC()
         {
             Triangle tri = new Triangle(new Point(0 , 0), new Point(4, 0), new Point(2, 2));
             //Testar med isIsosceles()-metoden då den är den enda som fungerar enligt mina tester..
@@ -68,19 +68,80 @@ namespace TriangelUnitTest
 
         //Test för Triangle(Point[] s)
         [TestMethod]
-        public void PointKonstruktornArray()
+        public void PointKonstruktornArray_likbent()
         {
             Point[] pArr = new Point[2];
-            pArr[0].x = 0;
+            pArr[0].x = 4;
             pArr[0].y = 0;
             pArr[1].x = 4;
             pArr[1].y = 0;
             pArr[2].x = 2;
             pArr[2].y = 2;
-            Triangle tri = new Triangle();
+            Triangle tri = new Triangle(pArr);
             //Testar med isIsosceles()-metoden då den är den enda som fungerar enligt mina tester..
             Assert.IsTrue(tri.isIsosceles());
+            //Returnerar false.. alltså fungerar inte pointkonstruktorn som den ska?
+        }
+        [TestMethod]
+        public void PointKonstruktornArray_OlikaSidor()
+        {
+            Point[] pArr = new Point[2];
+            pArr[0].x = 5;
+            pArr[0].y = 0;
+            pArr[1].x = 4;
+            pArr[1].y = 0;
+            pArr[2].x = 2;
+            pArr[2].y = 2;
+            Triangle tri = new Triangle(pArr);
+            //Testar med isIsosceles()-metoden då den är den enda som fungerar enligt mina tester..
+            Assert.IsTrue(tri.isScalene());
+            //Returnerar false.. alltså fungerar inte pointkonstruktorn som den ska?
+        }
+        [TestMethod]
+        public void PointKonstruktornArray_MerArray()
+        {
+            Point[] pArr = new Point[2];
+            pArr[0].x = 5;
+            pArr[0].y = 0;
+            pArr[1].x = 4;
+            pArr[1].y = 0;
+            pArr[2].x = 2;
+            pArr[2].y = 2;
+            pArr[3].x = 4;
+            pArr[3].y = 4;
+            Triangle tri = new Triangle(pArr);
+            //Testar med isIsosceles()-metoden då den är den enda som fungerar enligt mina tester..
+            Assert.IsFalse(tri.isScalene());
+            //Borde inte gå att mata in mer än 3 sidor..
+        }
+        [TestMethod]
+        public void PointKonstruktornArray_LikaSidor()
+        {
+            Point[] pArr = new Point[2];
+            pArr[0].x = 5;
+            pArr[0].y = 0;
+            pArr[1].x = 5;
+            pArr[1].y = 0;
+            pArr[2].x = 5;
+            pArr[2].y = 0;
+            Triangle tri = new Triangle(pArr);
+            //Testar med isIsosceles()-metoden då den är den enda som fungerar enligt mina tester..
+            Assert.IsTrue(tri.isEquilateral());
+            //Returnerar false.. alltså fungerar inte pointkonstruktorn som den ska?
         }
 
+        //Test för Triangle(double[] s)
+        [TestMethod]
+        public void DoubleKonstruktornArray() //behöver bara testa med en metod (isIsoscles) då det är den enda som fungerar..
+        {
+            double[] dArr = new double[3];
+            dArr[0] = 2.2;
+            dArr[1] = 2.2;
+            dArr[2] = 4.4;
+            Triangle tri = new Triangle(dArr);
+            //Testar med isIsosceles()-metoden då den är den enda som fungerar enligt mina tester..
+            Assert.IsTrue(tri.isIsosceles());
+            //Returnerar false.. alltså fungerar inte pointkonstruktorn som den ska?
+        }
     }
 }
