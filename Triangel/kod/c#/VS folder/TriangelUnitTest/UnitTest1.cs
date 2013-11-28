@@ -70,7 +70,7 @@ namespace TriangelUnitTest
         [TestMethod]
         public void PointKonstruktornArray_likbent()
         {
-            Point[] pArr = new Point[2];
+            Point[] pArr = new Point[3];
             pArr[0].x = 4;
             pArr[0].y = 0;
             pArr[1].x = 4;
@@ -142,6 +142,16 @@ namespace TriangelUnitTest
             //Testar med isIsosceles()-metoden då den är den enda som fungerar enligt mina tester..
             Assert.IsTrue(tri.isIsosceles());
             //Returnerar false.. alltså fungerar inte pointkonstruktorn som den ska?
+        }
+        //Testar med en ogiltig triangel i ett annars fungerande test!
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentNullException))]
+        public void OgiltigTriangel()
+        {
+            Triangle tri = new Triangle(0.0, 0.0, 0.0);
+            // Denna metod testar om triangeln är ogiltig, vi räknar med
+            // att få ett Felmedellande "ArgumentNullException", om vi ej får det
+            // så är testet ej avklararat! 
         }
     }
 }
